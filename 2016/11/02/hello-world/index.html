@@ -101,7 +101,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2016-11-02</span>
-            <span class="time">15:36:28</span>
+            <span class="time">12:34:44</span>
           </span>
           
         </div>
@@ -125,6 +125,22 @@
   </div>
 </article>
 
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: '', // 可选。默认为 location.href
+        owner: 'HugoWen',
+        repo: 'https://github.com/HugoWen/HugoTechBlogComment.git',
+        oauth: {
+            client_id: 'c3ff68fc29f5ff8ce400',
+            client_secret: 'c22178610eb5366e74c5b319b00d2a44fad9a3cc',
+        },
+    })
+    gitment.render('container')
+</script>
+
 
 
     <!-- Footer -->
@@ -134,7 +150,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <p class="copyright text-muted">
-          <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>  
+          <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
           <span id="busuanzi_container_site_uv">
   本站访客数<span id="busuanzi_value_site_uv"></span>人次
 </span>
