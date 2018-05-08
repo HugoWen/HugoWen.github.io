@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="Hugo Wen">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="斐波那契数列"/>
+  <meta property="og:title" content="连续子数组的最大和"/>
   <meta property="og:description" content="热爱开源，崇尚自由" />
   <meta property="og:site_name" content="Hugo&#39;s Blog"/>
   <meta property="og:type" content="article" />
@@ -46,7 +46,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">斐波那契数列</p>
+          <p class="title">连续子数组的最大和</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -143,15 +143,15 @@
           <div class="post-tags text-muted">
             Tags: 
 
-<a class="tag" href="/tags/剑指Offer/">#剑指Offer</a> <a class="tag" href="/tags/PHP/">#PHP</a> <a class="tag" href="/tags/算法/">#算法</a> <a class="tag" href="/tags/斐波那契数列/">#斐波那契数列</a>
+<a class="tag" href="/tags/剑指Offer/">#剑指Offer</a> <a class="tag" href="/tags/PHP/">#PHP</a> <a class="tag" href="/tags/算法/">#算法</a> <a class="tag" href="/tags/数组/">#数组</a>
 
 
           </div>
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项。<br>n&lt;=39<a id="more"></a></p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibonacci</span><span class="params">(int $n = <span class="number">0</span>)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> ($n === <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">  </div><div class="line">    <span class="keyword">if</span> ($n === <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">  </div><div class="line">    $arr = [<span class="number">0</span>, <span class="number">1</span>];</div><div class="line">    <span class="keyword">for</span> ($i = <span class="number">2</span>; $i &lt;= $n; $i ++) &#123;</div><div class="line">        $arr[$i] = $arr[$i - <span class="number">2</span>] + $arr[$i - <span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line">  </div><div class="line">    <span class="keyword">return</span> $arr[$n];</div><div class="line">&#125;</div><div class="line">  </div><div class="line">var_export(fibonacci(<span class="number">10</span>));</div></pre></td></tr></table></figure>
+          <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>HZ偶尔会拿些专业问题来忽悠那些非计算机专业的同学。今天测试组开完会后,他又发话了:在古老的一维模式识别中,常常需要计算连续子向量的最大和,当向量全为正数的时候,问题很好解决。但是,如果向量中包含负数,是否应该包含某个负数,并期望旁边的正数会弥补它呢？例如:{6,-3,-2,7,-15,1,2,2},连续子向量的最大和为8(从第0个开始,到第3个为止)。你会不会被他忽悠住？(子向量的长度至少是1)<a id="more"></a></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  </div><div class="line"><span class="comment">/**</span></div><div class="line"> * 最大子数组求和</div><div class="line"> * 找一个数组中拥有最大和的子数组，返回其和</div><div class="line"> */</div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">MaxSubArray</span><span class="params">(array $array)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (!$array) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">  </div><div class="line">    $sum = <span class="number">0</span>;</div><div class="line">    $max = <span class="number">0</span>;</div><div class="line">    <span class="keyword">foreach</span> ($array <span class="keyword">as</span> $i =&gt; $val) &#123;</div><div class="line">        $sum += $val;</div><div class="line">  </div><div class="line">        <span class="keyword">if</span> ($sum &lt;= <span class="number">0</span>) &#123;</div><div class="line">            $sum = <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">  </div><div class="line">        <span class="keyword">if</span> ($sum &gt; $max) &#123;</div><div class="line">            $max = $sum;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">  </div><div class="line">    <span class="keyword">if</span> ($max === <span class="number">0</span>) &#123;</div><div class="line">        $max = max($array);</div><div class="line">    &#125;</div><div class="line">  </div><div class="line">    <span class="keyword">return</span> $max;</div><div class="line">&#125;</div><div class="line">  </div><div class="line">$data = [<span class="number">1</span>, <span class="number">-2</span>, <span class="number">3</span>, <span class="number">10</span>, <span class="number">-4</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">-5</span>];</div><div class="line">$data2 = [<span class="number">-2</span>, <span class="number">-8</span>, <span class="number">-1</span>, <span class="number">-5</span>, <span class="number">-9</span>];</div><div class="line">$data3 = [<span class="number">2</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>];</div><div class="line">  </div><div class="line">var_dump(MaxSubArray($data));</div></pre></td></tr></table></figure>
         </div>
 
           <div id="container"></div>
@@ -166,7 +166,7 @@
 
 <script>
     var gitment = new Gitment({
-        id: "斐波那契数列", // 可选。默认为 location.href
+        id: "连续子数组的最大和", // 可选。默认为 location.href
         owner: 'HugoWen',
         repo: 'HugoTechBlogComment',
         oauth: {
