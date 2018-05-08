@@ -8,10 +8,10 @@
   <meta name="description" content="">
   <meta name="author" content="Hugo Wen">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="替换空格 | 剑指Offer"/>
+  <meta property="og:title" content="Hugo&#39;s Blog"/>
   <meta property="og:description" content="热爱开源，崇尚自由" />
   <meta property="og:site_name" content="Hugo&#39;s Blog"/>
-  <meta property="og:type" content="article" />
+  <meta property="og:type" content="website" />
   <meta property="og:image" content="http://hugowen.comundefined"/>
   
     <link rel="alternate" href="/atom.xml" title="Hugo&#39;s Blog" type="application/atom+xml">
@@ -38,7 +38,8 @@
 </head>
 
   <body>
-    <!-- Page Header -->
+    <!-- Archive Header -->
+<!-- Page Header -->
 
 
 <header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
@@ -46,7 +47,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">替换空格 | 剑指Offer</p>
+          <p class="title">Blog Archives</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -116,67 +117,34 @@
 </header>
 
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By Hugo Wen</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2018-05-07</span>
-            <span class="time">11:02:23</span>
-          </span>
-          
-          <!--  Categories  -->
-            <span class="categories info">Under 
+<!-- Archive List -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      
+        <div class="archive-item">
+  <a href="/2018/05/08/旋转数组最小数字/" class="post-title">
+    旋转数组最小数字
+  </a>
+  <div class="date text-muted">Posted on 2018-05-08 10:58:19</div>
+</div>
 
-<a href="/categories/剑指Offer/">剑指Offer</a>
-</span>
-          
-        </div>
-        <!-- Tags -->
-        
-          <div class="post-tags text-muted">
-            Tags: 
+      
 
-<a class="tag" href="/tags/剑指Offer/">#剑指Offer</a> <a class="tag" href="/tags/PHP/">#PHP</a> <a class="tag" href="/tags/算法/">#算法</a> <a class="tag" href="/tags/字符串/">#字符串</a>
-
-
-          </div>
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy.<a id="more"></a></p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span>  </div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceSpace</span><span class="params">(string $str)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> str_replace(<span class="string">' '</span>, <span class="string">'%20'</span>, $str);</div><div class="line">&#125;   </div><div class="line">  </div><div class="line"><span class="keyword">echo</span> replaceSpace(<span class="string">'We are happy.'</span>);</div></pre></td></tr></table></figure>
-
-        </div>
-
-          <div id="container"></div>
-      </div>
     </div>
-
-
   </div>
-</article>
-
-
-
-<script>
-    var gitment = new Gitment({
-        id: "替换空格 | 剑指Offer", // 可选。默认为 location.href
-        owner: 'HugoWen',
-        repo: 'HugoTechBlogComment',
-        oauth: {
-            client_id: 'c3ff68fc29f5ff8ce400',
-            client_secret: 'c22178610eb5366e74c5b319b00d2a44fad9a3cc',
-        },
-    })
-    gitment.render('container')
-</script>
+</div>
+<!-- Pagination -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-md-10 col-md-offset-1">
+      <ul class="pagination">
+          
+          
+      </ul>
+    </div>
+  </div>
+</div>
 
 
 

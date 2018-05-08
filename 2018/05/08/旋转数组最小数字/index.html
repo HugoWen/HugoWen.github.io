@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Hugo Wen">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="旋转数组最小数字"/>
+  <meta property="og:description" content="热爱开源，崇尚自由" />
+  <meta property="og:site_name" content="Hugo&#39;s Blog"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://hugowen.comundefined"/>
+  
+    <link rel="alternate" href="/atom.xml" title="Hugo&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+
+  <!-- Site Title -->
+  <title>Hugo's Blog</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">旋转数组最小数字</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  首页
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  归档
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/books">
+                  
+                  我读
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/movies">
+                  
+                  我看
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/HugoWen">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="http://doushuziwei.com">
+                  
+                  紫微斗数
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="http://peoplepoem.com">
+                  
+                  人与诗
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Hugo Wen</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2018-05-08</span>
+            <span class="time">11:02:23</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/剑指Offer/">剑指Offer</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/剑指Offer/">#剑指Offer</a> <a class="tag" href="/tags/PHP/">#PHP</a> <a class="tag" href="/tags/算法/">#算法</a> <a class="tag" href="/tags/二分查找/">#二分查找</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。<a id="more"></a></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">minRevertArray</span><span class="params">(array $arr)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (!$arr) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">  </div><div class="line">    <span class="comment">// 使用二分查找法</span></div><div class="line">    $start = <span class="number">0</span>;</div><div class="line">    $end = count($arr) - <span class="number">1</span>;</div><div class="line">  </div><div class="line">    <span class="keyword">while</span> ($arr[$start] &gt;= $arr[$end]) &#123;</div><div class="line">  </div><div class="line">        <span class="keyword">if</span> ($end - $start === <span class="number">1</span>) &#123;</div><div class="line">            <span class="keyword">return</span> $arr[$end];</div><div class="line">        &#125;</div><div class="line">  </div><div class="line">        $mid = (int)(($start + $end) / <span class="number">2</span>);</div><div class="line">  </div><div class="line">        <span class="comment">// start end mid 相等，无法继续判断</span></div><div class="line">        <span class="keyword">if</span> ($arr[$start] === $arr[$end] &amp;&amp; $arr[$start] == $arr[$mid]) &#123;</div><div class="line">            <span class="keyword">return</span> minArray($arr, $start, $end);</div><div class="line">        &#125;</div><div class="line">  </div><div class="line">        <span class="keyword">if</span> ($arr[$mid] &gt;= $arr[$start]) &#123;</div><div class="line">            $start = $mid;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            $end = $mid;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">  </div><div class="line">    <span class="keyword">return</span> $arr[$start];</div><div class="line">&#125;</div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">minArray</span><span class="params">(array $arr, int $start, int $end)</span></span></div><div class="line">&#123;</div><div class="line">    $ret = $arr[$start];</div><div class="line">    <span class="keyword">for</span> ($i = $start + <span class="number">1</span>; $i &lt;= $end; $i ++) &#123;</div><div class="line">        <span class="keyword">if</span> ($ret &gt; $arr[$i]) &#123;</div><div class="line">            $ret = $arr[$i];</div><div class="line">        &#125;</div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="keyword">return</span> $ret;</div><div class="line">&#125;</div><div class="line">  </div><div class="line">$arr = [<span class="number">6501</span>,<span class="number">6828</span>,<span class="number">6963</span>,<span class="number">7036</span>,<span class="number">7422</span>,<span class="number">7674</span>,<span class="number">8146</span>,<span class="number">8468</span>,<span class="number">8704</span>,<span class="number">8717</span>,<span class="number">9170</span>,<span class="number">9359</span>,<span class="number">9719</span>,<span class="number">9895</span>,<span class="number">9896</span>,<span class="number">9913</span>,<span class="number">9962</span>,<span class="number">154</span>,<span class="number">293</span>,<span class="number">334</span>,<span class="number">492</span>,<span class="number">1323</span>,<span class="number">1479</span>,<span class="number">1539</span>,<span class="number">1727</span>,<span class="number">1870</span>,<span class="number">1943</span>,<span class="number">2383</span>,<span class="number">2392</span>,<span class="number">2996</span>,<span class="number">3282</span>,<span class="number">3812</span>,<span class="number">3903</span>,<span class="number">4465</span>,<span class="number">4605</span>,<span class="number">4665</span>,<span class="number">4772</span>,<span class="number">4828</span>,<span class="number">5142</span>,<span class="number">5437</span>,<span class="number">5448</span>,<span class="number">5668</span>,<span class="number">5706</span>,<span class="number">5725</span>,<span class="number">6300</span>,<span class="number">6335</span>];</div><div class="line">var_export(minRevertArray($arr));</div></pre></td></tr></table></figure>
+
+        </div>
+
+          <div id="container"></div>
+      </div>
+    </div>
+
+
+  </div>
+</article>
+
+
+
+<script>
+    var gitment = new Gitment({
+        id: "旋转数组最小数字", // 可选。默认为 location.href
+        owner: 'HugoWen',
+        repo: 'HugoTechBlogComment',
+        oauth: {
+            client_id: 'c3ff68fc29f5ff8ce400',
+            client_secret: 'c22178610eb5366e74c5b319b00d2a44fad9a3cc',
+        },
+    })
+    gitment.render('container')
+</script>
+
+
+
+    <!-- Footer -->
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+          <span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+          <!--Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>-->
+          <!--Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>-->
+        <!--<p class="copyright text-muted">-->
+          <!--Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>-->
+        <!--</p>-->
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
