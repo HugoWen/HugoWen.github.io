@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="Hugo Wen">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="tags"/>
+  <meta property="og:title" content="标签"/>
   <meta property="og:description" content="热爱开源，崇尚自由" />
   <meta property="og:site_name" content="Hugo&#39;s Blog"/>
   <meta property="og:type" content="article" />
@@ -46,7 +46,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">tags</p>
+          <p class="title">标签</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -56,6 +56,22 @@
                 <a href="/">
                   
                   首页
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories">
+                  
+                  分类
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags">
+                  
+                  标签
                   
                 </a>
               </li>
@@ -116,51 +132,23 @@
 </header>
 
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By Hugo Wen</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2018-05-08</span>
-            <span class="time">15:12:40</span>
-          </span>
-          
-        </div>
-        <!-- Tags -->
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          
-        </div>
 
-          <div id="container"></div>
-      </div>
+
+<div class="container typo">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="tag-cloud">
+    <div class="tag-cloud-title">
+        标签
     </div>
 
+    <div class="tag-cloud-tags">
+        <a href="/tags/PHP/" style="font-size: 30px; color: #111">PHP</a> <a href="/tags/二分查找/" style="font-size: 12px; color: #ccc">二分查找</a> <a href="/tags/剑指Offer/" style="font-size: 30px; color: #111">剑指Offer</a> <a href="/tags/字符串/" style="font-size: 12px; color: #ccc">字符串</a> <a href="/tags/数组/" style="font-size: 12px; color: #ccc">数组</a> <a href="/tags/斐波那契数列/" style="font-size: 12px; color: #ccc">斐波那契数列</a> <a href="/tags/查找/" style="font-size: 12px; color: #ccc">查找</a> <a href="/tags/算法/" style="font-size: 30px; color: #111">算法</a> <a href="/tags/递归/" style="font-size: 12px; color: #ccc">递归</a>
+    </div>
+</div>
+        </div></div></div>
 
-  </div>
-</article>
 
-
-
-<script>
-    var gitment = new Gitment({
-        id: "tags", // 可选。默认为 location.href
-        owner: 'HugoWen',
-        repo: 'HugoTechBlogComment',
-        oauth: {
-            client_id: 'c3ff68fc29f5ff8ce400',
-            client_secret: 'c22178610eb5366e74c5b319b00d2a44fad9a3cc',
-        },
-    })
-    gitment.render('container')
-</script>
 
 
 

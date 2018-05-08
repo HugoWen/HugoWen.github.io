@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="Hugo Wen">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="categories"/>
+  <meta property="og:title" content="分类"/>
   <meta property="og:description" content="热爱开源，崇尚自由" />
   <meta property="og:site_name" content="Hugo&#39;s Blog"/>
   <meta property="og:type" content="article" />
@@ -46,7 +46,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">categories</p>
+          <p class="title">分类</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -56,6 +56,22 @@
                 <a href="/">
                   
                   首页
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories">
+                  
+                  分类
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags">
+                  
+                  标签
                   
                 </a>
               </li>
@@ -116,51 +132,24 @@
 </header>
 
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By Hugo Wen</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2018-05-08</span>
-            <span class="time">15:12:40</span>
-          </span>
-          
-        </div>
-        <!-- Tags -->
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          
-        </div>
 
-          <div id="container"></div>
-      </div>
+
+
+<div class="container typo">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="category-all-page col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"">
+    <div class="category-all-title">
+        分类
     </div>
 
+    <div class="category-all">
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/剑指Offer/">剑指Offer</a><span class="category-list-count">6</span></li></ul>
+    </div>
 
-  </div>
-</article>
+</div>
+    </div></div></div>
 
-
-
-<script>
-    var gitment = new Gitment({
-        id: "categories", // 可选。默认为 location.href
-        owner: 'HugoWen',
-        repo: 'HugoTechBlogComment',
-        oauth: {
-            client_id: 'c3ff68fc29f5ff8ce400',
-            client_secret: 'c22178610eb5366e74c5b319b00d2a44fad9a3cc',
-        },
-    })
-    gitment.render('container')
-</script>
 
 
 
