@@ -149,7 +149,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2018-05-18</span>
-            <span class="time">11:43:32</span>
+            <span class="time">11:46:57</span>
           </span>
           
           <!--  Categories  -->
@@ -171,34 +171,23 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>####1. 安装 <code>Homebrew</code>  </p>
-<p><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
-<p>####2. 安装 <code>php7.2</code></p>
-<p><code>brew install php</code></p>
-<blockquote>
-<p>brew install php 默认为最新版本的php，当前是7.2版本<br>现在已经不需要另外引入php的三方brew库，已经合并到官方库里了</p>
-</blockquote>
+          <h4 id="1-安装-Homebrew"><a href="#1-安装-Homebrew" class="headerlink" title="1. 安装 Homebrew"></a>1. 安装 <code>Homebrew</code></h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>bin<span class="regexp">/ruby -e "$(curl -fsSL https:/</span><span class="regexp">/raw.githubusercontent.com/</span>Homebrew<span class="regexp">/install/m</span>aster<span class="regexp">/install)"</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-安装-php7-2"><a href="#2-安装-php7-2" class="headerlink" title="2. 安装 php7.2"></a>2. 安装 <code>php7.2</code></h4><p><code>brew install php</code></p>
+<p>brew install php 默认为最新版本的php，当前是7.2版本。<br>现在已经不需要另外引入php的三方brew库，已经合并到官方库里了</p>
 <p>安装成功后开启 <code>php</code> 服务 <code>brew services start php</code></p>
-<p><em>假如没有卸载系统预装的<code>php</code>环境，也没有关系，只需要调整一下路径，编辑 <code>/etc/paths</code> 文件，在最前面加入 <code>/usr/local/Cellar</code></em></p>
-<p>####3. 安装 <code>nginx</code></p>
-<p><code>brew install nginx</code></p>
+<p><em>假如没有卸载系统预装的<code>php</code>环境，也没有关系，只需要调整一下路径，编辑 <code>/etc/paths</code> 文件，在最前面加入 <code>/usr/local/Cellar</code></em><br><a id="more"></a></p>
+<h4 id="3-安装-nginx"><a href="#3-安装-nginx" class="headerlink" title="3. 安装 nginx"></a>3. 安装 <code>nginx</code></h4><p><code>brew install nginx</code></p>
 <p>安装成功后开启 <code>nginx</code> 服务 <code>brew services start nginx</code></p>
 <p><code>nginx</code> 配置文件路径在 <code>/usr/local/etc/nginx/servers</code> 下</p>
-<p>####4. 安装 <code>mysql</code></p>
-<p><code>brew install mysql</code></p>
+<h4 id="4-安装-mysql"><a href="#4-安装-mysql" class="headerlink" title="4. 安装 mysql"></a>4. 安装 <code>mysql</code></h4><p><code>brew install mysql</code></p>
 <p>安装成功后开启 <code>mysql</code> 服务 <code>mysql.server start</code></p>
-<blockquote>
-<p>默认用户名为 <code>root</code> ，密码为空</p>
-</blockquote>
-<p>####5. 安装 <code>redis</code></p>
-<p><code>brew install redis</code></p>
+<p>默认用户名为 <code>root</code> ，密码为空。</p>
+<h4 id="5-安装-redis"><a href="#5-安装-redis" class="headerlink" title="5. 安装 redis"></a>5. 安装 <code>redis</code></h4><p><code>brew install redis</code></p>
 <p>安装成功后开启 <code>redis</code> 服务 <code>brew services start redis</code></p>
 <hr>
 <p>其他一些 <code>php</code> 扩展包可能需要使用 <code>pecl</code> 来安装，以安装 <code>grpc</code> 举例。</p>
-<p>####1. 安装 <code>pecl</code></p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -O http<span class="variable">s:</span>//pear.php.net/<span class="keyword">go</span>-pear.phar</span><br><span class="line">sudo php -d detect_unicode=<span class="number">0</span> <span class="keyword">go</span>-pear.phar</span><br></pre></td></tr></table></figure>
-<p>####2. 安装 <code>grpc</code> 扩展</p>
-<p><code>pecl install grpc</code></p>
+<h4 id="1-安装-pecl"><a href="#1-安装-pecl" class="headerlink" title="1. 安装 pecl"></a>1. 安装 <code>pecl</code></h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -O http<span class="variable">s:</span>//pear.php.net/<span class="keyword">go</span>-pear.phar</span><br><span class="line">sudo php -d detect_unicode=<span class="number">0</span> <span class="keyword">go</span>-pear.phar</span><br></pre></td></tr></table></figure>
+<h4 id="2-安装-grpc-扩展"><a href="#2-安装-grpc-扩展" class="headerlink" title="2. 安装 grpc 扩展"></a>2. 安装 <code>grpc</code> 扩展</h4><p><code>pecl install grpc</code></p>
 <p>安装完成后会自动打开 <code>grpc</code> 扩展，不需要再手动修改 <code>php.ini</code> 文件。</p>
 
         </div>
