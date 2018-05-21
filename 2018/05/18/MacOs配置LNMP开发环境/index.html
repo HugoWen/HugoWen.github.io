@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="Hugo Wen">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="分类"/>
+  <meta property="og:title" content="MacOS配置LNMP开发环境"/>
   <meta property="og:description" content="热爱开源，崇尚自由" />
   <meta property="og:site_name" content="Hugo&#39;s Blog"/>
   <meta property="og:type" content="article" />
@@ -46,7 +46,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">分类</p>
+          <p class="title">MacOS配置LNMP开发环境</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -135,20 +135,97 @@
 
 
 
-<div class="container typo">
+
+
+<article>
+  <div class="container typo">
     <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<div class="category-all-page col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"">
-    <div class="category-all-title">
-        分类
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Hugo Wen</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2018-05-18</span>
+            <span class="time">11:43:32</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/MacOS/">MacOS</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/MacOS/">#MacOS</a> <a class="tag" href="/tags/环境配置/">#环境配置</a> <a class="tag" href="/tags/LNMP/">#LNMP</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>####1. 安装 <code>Homebrew</code>  </p>
+<p><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
+<p>####2. 安装 <code>php7.2</code></p>
+<p><code>brew install php</code></p>
+<blockquote>
+<p>brew install php 默认为最新版本的php，当前是7.2版本<br>现在已经不需要另外引入php的三方brew库，已经合并到官方库里了</p>
+</blockquote>
+<p>安装成功后开启 <code>php</code> 服务 <code>brew services start php</code></p>
+<p><em>假如没有卸载系统预装的<code>php</code>环境，也没有关系，只需要调整一下路径，编辑 <code>/etc/paths</code> 文件，在最前面加入 <code>/usr/local/Cellar</code></em></p>
+<p>####3. 安装 <code>nginx</code></p>
+<p><code>brew install nginx</code></p>
+<p>安装成功后开启 <code>nginx</code> 服务 <code>brew services start nginx</code></p>
+<p><code>nginx</code> 配置文件路径在 <code>/usr/local/etc/nginx/servers</code> 下</p>
+<p>####4. 安装 <code>mysql</code></p>
+<p><code>brew install mysql</code></p>
+<p>安装成功后开启 <code>mysql</code> 服务 <code>mysql.server start</code></p>
+<blockquote>
+<p>默认用户名为 <code>root</code> ，密码为空</p>
+</blockquote>
+<p>####5. 安装 <code>redis</code></p>
+<p><code>brew install redis</code></p>
+<p>安装成功后开启 <code>redis</code> 服务 <code>brew services start redis</code></p>
+<hr>
+<p>其他一些 <code>php</code> 扩展包可能需要使用 <code>pecl</code> 来安装，以安装 <code>grpc</code> 举例。</p>
+<p>####1. 安装 <code>pecl</code></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -O http<span class="variable">s:</span>//pear.php.net/<span class="keyword">go</span>-pear.phar</span><br><span class="line">sudo php -d detect_unicode=<span class="number">0</span> <span class="keyword">go</span>-pear.phar</span><br></pre></td></tr></table></figure>
+<p>####2. 安装 <code>grpc</code> 扩展</p>
+<p><code>pecl install grpc</code></p>
+<p>安装完成后会自动打开 <code>grpc</code> 扩展，不需要再手动修改 <code>php.ini</code> 文件。</p>
+
+        </div>
+
+          <div id="container"></div>
+      </div>
     </div>
 
-    <div class="category-all">
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MacOS/">MacOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/剑指Offer/">剑指Offer</a><span class="category-list-count">6</span></li></ul>
-    </div>
 
-</div>
-    </div></div></div>
+  </div>
+</article>
+
+
+
+<script>
+    var gitment = new Gitment({
+        id: "MacOS配置LNMP开发环境", // 可选。默认为 location.href
+        owner: 'HugoWen',
+        repo: 'HugoTechBlogComment',
+        oauth: {
+            client_id: 'c3ff68fc29f5ff8ce400',
+            client_secret: 'c22178610eb5366e74c5b319b00d2a44fad9a3cc',
+        },
+    })
+    gitment.render('container')
+</script>
+
 
 
 
