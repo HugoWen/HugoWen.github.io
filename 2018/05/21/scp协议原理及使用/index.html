@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="Hugo Wen">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="连续子数组的最大和"/>
+  <meta property="og:title" content="SCP协议原理及使用"/>
   <meta property="og:description" content="热爱开源，崇尚自由" />
   <meta property="og:site_name" content="Hugo&#39;s Blog"/>
   <meta property="og:type" content="article" />
@@ -46,7 +46,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">连续子数组的最大和</p>
+          <p class="title">SCP协议原理及使用</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -148,14 +148,14 @@
           
           <!-- Date -->
           <span class="date-time info">On
-            <span class="date">2018-05-08</span>
+            <span class="date">2018-05-21</span>
             <span class="time">15:14:04</span>
           </span>
           
           <!--  Categories  -->
             <span class="categories info">Under 
 
-<a href="/categories/剑指Offer/">剑指Offer</a>
+<a href="/categories/Linux/">Linux</a>
 </span>
           
         </div>
@@ -164,15 +164,23 @@
           <div class="post-tags text-muted">
             Tags: 
 
-<a class="tag" href="/tags/剑指Offer/">#剑指Offer</a> <a class="tag" href="/tags/PHP/">#PHP</a> <a class="tag" href="/tags/算法/">#算法</a> <a class="tag" href="/tags/数组/">#数组</a>
+<a class="tag" href="/tags/Shell/">#Shell</a> <a class="tag" href="/tags/SCP/">#SCP</a> <a class="tag" href="/tags/SSH/">#SSH</a> <a class="tag" href="/tags/Linux/">#Linux</a>
 
 
           </div>
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>HZ偶尔会拿些专业问题来忽悠那些非计算机专业的同学。今天测试组开完会后,他又发话了:在古老的一维模式识别中,常常需要计算连续子向量的最大和,当向量全为正数的时候,问题很好解决。但是,如果向量中包含负数,是否应该包含某个负数,并期望旁边的正数会弥补它呢？例如:{6,-3,-2,7,-15,1,2,2},连续子向量的最大和为8(从第0个开始,到第3个为止)。你会不会被他忽悠住？(子向量的长度至少是1)<a id="more"></a></p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 最大子数组求和</span></span><br><span class="line"><span class="comment"> * 找一个数组中拥有最大和的子数组，返回其和</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MaxSubArray</span><span class="params">(array $array)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!$array) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    $sum = <span class="number">0</span>;</span><br><span class="line">    $max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">foreach</span> ($array <span class="keyword">as</span> $i =&gt; $val) &#123;</span><br><span class="line">        $sum += $val;</span><br><span class="line">  </span><br><span class="line">        <span class="keyword">if</span> ($sum &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            $sum = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">  </span><br><span class="line">        <span class="keyword">if</span> ($sum &gt; $max) &#123;</span><br><span class="line">            $max = $sum;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">if</span> ($max === <span class="number">0</span>) &#123;</span><br><span class="line">        $max = max($array);</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> $max;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">$data = [<span class="number">1</span>, <span class="number">-2</span>, <span class="number">3</span>, <span class="number">10</span>, <span class="number">-4</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">-5</span>];</span><br><span class="line">$data2 = [<span class="number">-2</span>, <span class="number">-8</span>, <span class="number">-1</span>, <span class="number">-5</span>, <span class="number">-9</span>];</span><br><span class="line">$data3 = [<span class="number">2</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>];</span><br><span class="line">  </span><br><span class="line">var_dump(MaxSubArray($data));</span><br></pre></td></tr></table></figure>
+          <h2 id="SCP协议"><a href="#SCP协议" class="headerlink" title="SCP协议"></a>SCP协议</h2><p><code>SCP</code> 协议，全称 <code>Secure Copy</code> 协议，中文名是 <code>安全复制协议</code>。是指在本地主机与远程主机或两台远程主机之间基于 <code>Secure Shell (SSH)</code> 协议传输文件的协议。</p>
+<p><code>SCP</code> 使用 <code>SSH</code> 完成身份认证以及数据传输。<code>SCP</code> 包含 <code>SCP CLIENT（客户端）</code> 和 <code>SCP SERVER（服务端）</code>，客户端可以向服务端发送文件，也可以从服务端接收文件。</p>
+<p><code>SCP</code> 默认通过 <code>TCP</code> 端口 <strong>22</strong> 运行。</p>
+<h2 id="SCP程序"><a href="#SCP程序" class="headerlink" title="SCP程序"></a>SCP程序</h2><p><code>SCP</code> 程序，是将 <code>SCP</code> 协议实现的程序工具。<code>scp</code> 命令是 <code>SCP</code> 程序的一种实现方式。</p>
+<p><code>scp</code> 命令：</p>
+<p><em>复制文件到主机:</em><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp SourceFile user@host:directory/TargetFile</span><br></pre></td></tr></table></figure></p>
+<p><em>从主机复制文件:</em><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scp user@host:directory/SourceFile TargetFile</span><br><span class="line">scp -r user@host:directory/SourceFolder TargetFolder</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">*指定端口:*</span><br><span class="line">```bash</span><br><span class="line">scp -P 2222 user@host:directory/SourceFile TargetFile</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>参考：<br><a href="https://zh.wikipedia.org/wiki/%E5%AE%89%E5%85%A8%E5%A4%8D%E5%88%B6#%E5%AE%89%E5%85%A8%E5%A4%8D%E5%88%B6%EF%BC%88%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6%E7%A8%8B%E5%BA%8F%EF%BC%89" target="_blank" rel="noopener">维基百科: SCP协议</a></p>
+
         </div>
 
           <div id="container"></div>
@@ -187,7 +195,7 @@
 
 <script>
     var gitment = new Gitment({
-        id: "连续子数组的最大和", // 可选。默认为 location.href
+        id: "SCP协议原理及使用", // 可选。默认为 location.href
         owner: 'HugoWen',
         repo: 'HugoTechBlogComment',
         oauth: {
