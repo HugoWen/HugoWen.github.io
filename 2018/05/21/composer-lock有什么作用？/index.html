@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="Hugo Wen">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="连续子数组的最大和"/>
+  <meta property="og:title" content="composer.lock有什么作用？"/>
   <meta property="og:description" content="热爱开源，崇尚自由" />
   <meta property="og:site_name" content="Hugo&#39;s Blog"/>
   <meta property="og:type" content="article" />
@@ -46,7 +46,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">连续子数组的最大和</p>
+          <p class="title">composer.lock有什么作用？</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -148,14 +148,14 @@
           
           <!-- Date -->
           <span class="date-time info">On
-            <span class="date">2018-05-08</span>
+            <span class="date">2018-05-21</span>
             <span class="time">16:03:18</span>
           </span>
           
           <!--  Categories  -->
             <span class="categories info">Under 
 
-<a href="/categories/剑指Offer/">剑指Offer</a>
+<a href="/categories/PHP/">PHP</a>
 </span>
           
         </div>
@@ -164,15 +164,21 @@
           <div class="post-tags text-muted">
             Tags: 
 
-<a class="tag" href="/tags/PHP/">#PHP</a> <a class="tag" href="/tags/剑指Offer/">#剑指Offer</a> <a class="tag" href="/tags/算法/">#算法</a> <a class="tag" href="/tags/数组/">#数组</a>
+<a class="tag" href="/tags/Composer/">#Composer</a> <a class="tag" href="/tags/PHP/">#PHP</a>
 
 
           </div>
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>HZ偶尔会拿些专业问题来忽悠那些非计算机专业的同学。今天测试组开完会后,他又发话了:在古老的一维模式识别中,常常需要计算连续子向量的最大和,当向量全为正数的时候,问题很好解决。但是,如果向量中包含负数,是否应该包含某个负数,并期望旁边的正数会弥补它呢？例如:{6,-3,-2,7,-15,1,2,2},连续子向量的最大和为8(从第0个开始,到第3个为止)。你会不会被他忽悠住？(子向量的长度至少是1)<a id="more"></a></p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 最大子数组求和</span></span><br><span class="line"><span class="comment"> * 找一个数组中拥有最大和的子数组，返回其和</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MaxSubArray</span><span class="params">(array $array)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!$array) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    $sum = <span class="number">0</span>;</span><br><span class="line">    $max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">foreach</span> ($array <span class="keyword">as</span> $i =&gt; $val) &#123;</span><br><span class="line">        $sum += $val;</span><br><span class="line">  </span><br><span class="line">        <span class="keyword">if</span> ($sum &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            $sum = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">  </span><br><span class="line">        <span class="keyword">if</span> ($sum &gt; $max) &#123;</span><br><span class="line">            $max = $sum;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">if</span> ($max === <span class="number">0</span>) &#123;</span><br><span class="line">        $max = max($array);</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> $max;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">$data = [<span class="number">1</span>, <span class="number">-2</span>, <span class="number">3</span>, <span class="number">10</span>, <span class="number">-4</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">-5</span>];</span><br><span class="line">$data2 = [<span class="number">-2</span>, <span class="number">-8</span>, <span class="number">-1</span>, <span class="number">-5</span>, <span class="number">-9</span>];</span><br><span class="line">$data3 = [<span class="number">2</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>];</span><br><span class="line">  </span><br><span class="line">var_dump(MaxSubArray($data));</span><br></pre></td></tr></table></figure>
+          <h2 id="Composer-背景"><a href="#Composer-背景" class="headerlink" title="Composer 背景"></a>Composer 背景</h2><p><code>Composer</code> 是 <code>PHP</code> 项目的依赖管理器，用来解决PHP项目没有快速引入三方库代码的情况。比较类似 <code>Node</code> 的 <code>NPM</code>。</p>
+<h2 id="Composer-组成"><a href="#Composer-组成" class="headerlink" title="Composer 组成"></a>Composer 组成</h2><p><code>composer.json</code>：项目安装文件<br>初始化文件，在文件内定义需要引入的依赖关系，包括包名和版本号。</p>
+<p><code>composer.lock</code>：锁文件<br>锁定项目中引入的三方依赖的报名和版本号。<a id="more"></a></p>
+<h2 id="composer-lock-有什么作用？"><a href="#composer-lock-有什么作用？" class="headerlink" title="composer.lock 有什么作用？"></a>composer.lock 有什么作用？</h2><p>在安装三方依赖之后，Composer会把安装时确切的包名和版本号写入 <code>composer.lock</code> 文件，起到锁定版本号的的作用，下一次执行 <code>composer install</code> 的时候，将会直接读取 <code>composer.lock</code> 文件，并使用其中写入的指定版本号，不会尝试去拿更新或者其他版本的三方依赖。</p>
+<p>这对于团队开发或者多人共同维护的项目比较有用处，可以保证各人之间使用的依赖都是同一版本的，也可以保证服务器与本地使用的也是同一版本，这样就不会有因为版本差异而带来的未知问题。所以这也要求，要将 <code>composer.lock</code> 文件上传到代码版本库中。</p>
+<p>上边也有讲到，当执行 <code>composer install</code> 的时候会直接读取 <code>composer.lock</code> 内的内容，并不会进行修改。假如不存在 <code>composer.lock</code> 文件，会根据 <code>composer.json</code> 安装依赖，安装好依赖之后会自动根据当前的版本依赖创建一份 <code>composer.lock</code> 文件。</p>
+<p>当执行 <code>composer update</code> 的时候，会同时更新 <code>composer.lock</code> 文件到最新的依赖版本号。</p>
+
         </div>
 
           <div id="container"></div>
@@ -187,7 +193,7 @@
 
 <script>
     var gitment = new Gitment({
-        id: "连续子数组的最大和", // 可选。默认为 location.href
+        id: "composer.lock有什么作用？", // 可选。默认为 location.href
         owner: 'HugoWen',
         repo: 'HugoTechBlogComment',
         oauth: {
