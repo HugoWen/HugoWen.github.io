@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="Hugo Wen">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="斐波那契数列"/>
+  <meta property="og:title" content="修改Composer引入三方库类中私有变量"/>
   <meta property="og:description" content="热爱开源，崇尚自由" />
   <meta property="og:site_name" content="Hugo&#39;s Blog"/>
   <meta property="og:type" content="article" />
@@ -46,7 +46,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">斐波那契数列</p>
+          <p class="title">修改Composer引入三方库类中私有变量</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -148,14 +148,14 @@
           
           <!-- Date -->
           <span class="date-time info">On
-            <span class="date">2018-05-08</span>
+            <span class="date">2018-05-24</span>
             <span class="time">15:55:02</span>
           </span>
           
           <!--  Categories  -->
             <span class="categories info">Under 
 
-<a href="/categories/剑指Offer/">剑指Offer</a>
+<a href="/categories/PHP/">PHP</a>
 </span>
           
         </div>
@@ -164,15 +164,25 @@
           <div class="post-tags text-muted">
             Tags: 
 
-<a class="tag" href="/tags/PHP/">#PHP</a> <a class="tag" href="/tags/剑指Offer/">#剑指Offer</a> <a class="tag" href="/tags/算法/">#算法</a> <a class="tag" href="/tags/斐波那契数列/">#斐波那契数列</a>
+<a class="tag" href="/tags/Composer/">#Composer</a> <a class="tag" href="/tags/PHP/">#PHP</a>
 
 
           </div>
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项。<br>n&lt;=39<a id="more"></a></p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibonacci</span><span class="params">(int $n = <span class="number">0</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ($n === <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">if</span> ($n === <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    $arr = [<span class="number">0</span>, <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">2</span>; $i &lt;= $n; $i ++) &#123;</span><br><span class="line">        $arr[$i] = $arr[$i - <span class="number">2</span>] + $arr[$i - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> $arr[$n];</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">var_export(fibonacci(<span class="number">10</span>));</span><br></pre></td></tr></table></figure>
+          <p>这是之前面试遇到的一个问题，题目大致是：</p>
+<blockquote>
+<p>在项目中使用Composer引入了一个三方库，现在想修改这个三方库中一个类内定义的私有属性的变量，应该如何实现？</p>
+</blockquote>
+<a id="more"></a>
+<p>我的回答是：</p>
+<blockquote>
+<p>找到三方库源代码，fork到自己的库中，在自己的库中修改此成员变量的属性为<code>public</code> 或者 <code>protected</code>，或者定义<code>setter</code>方法能够访问修改到此变量即可。最后引入自己修改过的这个库到项目里，替换掉原来的三方库。 然后这样做的缺点呢就是不能实时地与原三方库保持代码一致，需要自己维护更新或者手动保持一致，比较麻烦。</p>
+</blockquote>
+<p>然后面试官问还有没有其他的方法，我想了想说想不到了。</p>
+<p>是否还有其他的方法呢？如果有人知道的话希望可以留言告诉我。</p>
+
         </div>
 
           <div id="container"></div>
@@ -187,7 +197,7 @@
 
 <script>
     var gitment = new Gitment({
-        id: "斐波那契数列", // 可选。默认为 location.href
+        id: "修改Composer引入三方库类中私有变量", // 可选。默认为 location.href
         owner: 'HugoWen',
         repo: 'HugoTechBlogComment',
         oauth: {
